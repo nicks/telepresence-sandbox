@@ -1,0 +1,7 @@
+accessLog: {}
+entryPoints:
+  web:
+    address: ":3000"
+providers:
+  file:
+    directory: /etc/traefik/routers

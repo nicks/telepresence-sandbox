@@ -1,0 +1,7 @@
+services:
+  my-local-proxy:
+    build:
+      context: .
+      target: my-proxy
+    ports:
+    - "3000:3000"

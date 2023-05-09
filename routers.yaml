@@ -1,0 +1,19 @@
+http:
+  middlewares:
+    hub-stage-header:
+      headers:
+        customRequestHeaders:
+          Host: "hub.docker.com"
+  routers:
+    to-hub-stage:
+      entryPoints:
+      - "web"
+      rule: "PathPrefix(`/`)"
+      service: hub-stage
+      middlewares:
+      - hub-stage-header
+  services:
+    hub-stage:
+      loadBalancer:
+        servers:
+        - url: "https://hub.docker.com/"
