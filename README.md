@@ -62,6 +62,16 @@ curl -v localhost:3005
 * Connection #0 to host localhost left intact
 ```
 
+## Additional Details
+
 Interestingly, this happens for all traffic, not just the traffic being intercepted!
+
+Once telepresence gets into this state, the only way to fix it is to uninstall the agent.
+
+```
+telepresence uninstall -d my-proxy
+```
+
+Notably, `telepresence leave` does not fix the problem.
 
 
